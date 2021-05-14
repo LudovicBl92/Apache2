@@ -1,0 +1,9 @@
+<VirtualHost {{ ansible_ens33.ipv4.address }}:80>
+        ServerName mon-site.local
+        ServerAlias mon-site.local
+        DocumentRoot "/var/www/public/vhost1"
+        <Directory "/var/www/public/vhost1">
+        </Directory>
+        ErrorLog /var/log/apache2/error.mon-site.local.log
+</VirtualHost>
+
