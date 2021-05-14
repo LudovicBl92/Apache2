@@ -17,12 +17,12 @@
 
  - name: Copy template index.html file
    template:
-    src: /etc/ansible/Apache/Apache/templates/index2.j2
+    src: /etc/ansible/roles/Apache/templates/index2.j2
     dest: /var/www/public/vhost2/index.html
 
  - name: Create virtual host1
    template: 
-    src: /etc/ansible/Apache/Apache/templates/mon-site.j2 
+    src: /etc/ansible/roles/Apache/templates/mon-site.j2 
     dest: /etc/apache2/sites-available/mon-site.conf
 
  - name: Activation of the host
@@ -30,7 +30,7 @@
 
  - name: Create virtual host2
    template:
-    src: /etc/ansible/Apache/Apache/templates/mon-site2.j2
+    src: /etc/ansible/roles/Apache/templates/mon-site2.j2
     dest: /etc/apache2/sites-available/mon-site2.conf
 
  - name: Activation of the host
