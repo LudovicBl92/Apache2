@@ -1,9 +1,14 @@
-<VirtualHost {{ ansible_ens38.ipv4.address }}:80>
-        ServerName mon-site2.local
-        ServerAlias mon-site2.local
+<VirtualHost {{ ansible_ens38.ipv4.address }}:443>
+        ServerName www.mon-site2.local
+        ServerAlias www.mon-site2.local
         DocumentRoot "/var/www/public/vhost2"
         <Directory "/var/www/public/vhost2">
         </Directory>
+
+        SSLEngine on
+        SSLCertificateFile /etc/ssl/site2/server2.crt
+        SSLCertificateKeyFile /etc/ssl/site2/server.key
+
         ErrorLog /var/log/apache2/error.mon-site2.local.log
 </VirtualHost>
 

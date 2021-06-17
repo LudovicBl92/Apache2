@@ -10,6 +10,16 @@
     path: /var/www/public/vhost2
     state: directory
 
+ - name: Copy the certificat and key for website1
+   copy:
+    src: /etc/ssl/website/site1
+    dest: /etc/ssl
+
+ - name: Copy the certificat and key for website2
+   copy:
+    src: /etc/ssl/website/site2
+    dest: /etc/ssl
+
  - name: Copy template index.html file
    template: 
     src: /etc/ansible/roles/Apache/templates/index.j2 
@@ -32,6 +42,9 @@
    template:
     src: /etc/ansible/roles/Apache/templates/mon-site2.j2
     dest: /etc/apache2/sites-available/mon-site2.conf
+
+ - name: Activation of ssl protocol
+   command: a2enmod ssl
 
  - name: Activation of the host2
    command: a2ensite mon-site2
