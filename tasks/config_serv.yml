@@ -43,6 +43,11 @@
     src: /etc/ansible/roles/Apache/templates/mon-site2.j2
     dest: /etc/apache2/sites-available/mon-site2.conf
 
+ - name: Add the 2 resolve name in hosts files
+   template:
+    src: /etc/ansible/roles/Apache/templates/hosts.j2
+    dest: /etc/hosts 
+
  - name: Activation of ssl protocol
    command: a2enmod ssl
 
