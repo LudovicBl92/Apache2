@@ -1,5 +1,7 @@
 # Apache
 
+This playbook is functional on ubuntu 18.04
+
 Pre requires: The remote host must has 2 IP Address
 
 This role allowed to:
